@@ -1,0 +1,107 @@
+@import "../../sass/base";
+
+//Loader
+.loader {
+	border: 16px solid grey;
+	border-top: 16px solid $neonGreen;
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	animation: spin 1s linear infinite;
+}
+
+//Spin animation
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+//Advice
+.advice {
+	position: relative;
+	max-width: 300px;
+	margin: 0 auto;
+	background-color: $darkGrayishBlue;
+	box-shadow: 30px 50px 80px 0px #0000001a;
+	border-radius: 10px;
+	padding: 40px 24px 64px;
+	text-align: center;
+
+	//Title, text
+	&__title,
+	&__text {
+		margin-bottom: 24px;
+	}
+
+	//Divider
+	&__divider {
+		width: 250px;
+		height: 16px;
+	}
+
+	//Dice
+	&__dice {
+		position: absolute;
+		bottom: -30px;
+		left: 39%;
+		width: 64px;
+		height: 64px;
+		@include flexCenter();
+		border-radius: 50%;
+		background-color: $neonGreen;
+		transition: box-shadow 0.3s ease;
+
+		&:hover {
+			box-shadow: 0px 0px 40px 0px #53ffaa;
+		}
+
+		&-img {
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
+
+@media screen and (min-width: 375px) {
+	//Advice
+	.advice {
+		max-width: 343px;
+
+		//Divider
+		&__divider {
+			width: 295px;
+		}
+
+		//Dice
+		&__dice {
+			left: 41%;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.advice {
+		max-width: 540px;
+		border-radius: 15px;
+		padding: 48px 48px 72px;
+
+		//Title, text
+		&__text {
+			margin-bottom: 40px;
+		}
+
+		//Divider
+		&__divider {
+			width: 444px;
+		}
+
+		//Dice
+		&__dice {
+			left: 44%;
+		}
+	}
+}
